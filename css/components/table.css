@@ -1,0 +1,26 @@
+.container-table {
+  justify-content: center;
+}
+
+table{
+  border-collapse: collapse;
+}
+
+td,th{
+  border: 2px solid #16689e;
+  padding: 0.5rem;
+}
+
+.title{
+  margin-top: 1rem;
+  color: #114a70;
+}
+
+.header-table{
+  background-color: #5892b9;
+  color: white;;
+}
+
+.image-icon{
+  border-radius: 50px;
+}
