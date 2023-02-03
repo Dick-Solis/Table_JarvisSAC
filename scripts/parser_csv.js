@@ -11,5 +11,3 @@ export function jsonToCsv(items) {
   }
   return parserFormattCsv;
 }
-
-
