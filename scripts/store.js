@@ -1,4 +1,6 @@
 // manejador de los estado de la aplicación
 export const STORE = {
-  users: [],
+  users: null,
+  user_json: null,
+  user_csv: null,
 }

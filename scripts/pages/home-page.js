@@ -13,14 +13,35 @@ function renderUsers() {
         <td>${user.email}</td>
         <td>${user.nat}</td>
         <td> <img class="image-icon" src=${user.picture.thumbnail} alt=${user.name.first}></td>
-      </tr>`)}
+      </tr>`).join("")}
       `
 }
 
-function render() {
+function exportar (data, fileName) {
+  const a = document.createElement("a");
+  const contenido = data,
+      csvFile = new Blob([contenido], {type: "text/csv"}),
+      url = window.URL.createObjectURL(csvFile);
+  a.href = url;
+  a.download = fileName;
+  a.click();
+  window.URL.revokeObjectURL(url);
+};
 
+function lisstenExportCsv(){
+  const buttonExport = document.getElementById("exportar");
+  buttonExport.addEventListener("click",(event)=>{
+    event.preventDefault();
+    exportar(STORE.user_csv.join('\n'), "users.csv");
+  });
+}
+
+function render() {
   return `
-    <h2 class="title headin-lg text-center mb-8">Tabla Informativa de Usuarios Jarvis S.A.C. </h2>
+    <h2 class="title headin-lg flex justify-center mb-8">Tabla Informativa de Usuarios Jarvis S.A.C. </h2>
+    <div class="flex justify-center mb-8">
+      <button class="button" id="exportar">Descargar CSV</button>
+    </div>
     <div class="container-table flex mb-8 content-lg">
       <table>
         <thead class="header-table">
@@ -48,7 +69,7 @@ const HomePage = {
     return render();
   },
   addListeners() {
-
+    lisstenExportCsv();
   }
 }
 

@@ -12,7 +12,7 @@ export default async function apiFetch({ method, headers, body } = {}) {
   try {
     data = await response.json();
   } catch (error) {
-    data = response.statusText;
+    data = error.error;
   }
   return data;
 };
