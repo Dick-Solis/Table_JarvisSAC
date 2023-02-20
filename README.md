@@ -2,6 +2,9 @@
 Aplicación creada con Javascript Vanilla para la consulta de la url "https://randomuser.me/api/?results=15" 
 donde trae 15 usuarios aletaorios en formato Json.
 
+## PROCESO DE EJECUCION
+Instalar la extension de Live Server en visual studio code para ejecutar la aplicación
+
 consumo de la api fetch para poder trabajar con los datos traidos de la Url
 ![image](https://user-images.githubusercontent.com/99754585/220163357-f0cea706-c958-4729-9473-f7dec23da18d.png)
 
